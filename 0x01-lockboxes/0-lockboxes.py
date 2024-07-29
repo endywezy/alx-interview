@@ -19,6 +19,7 @@ def canUnlockAll(boxes):
 
     return len(unlocked) == len(boxes)
 
+
 if __name__ == "__main__":
     boxes = [[1], [2], [3], [4], []]
     print(canUnlockAll(boxes))
