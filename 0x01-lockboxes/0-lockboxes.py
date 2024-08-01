@@ -13,14 +13,14 @@ def canUnlockAll(boxes):
     if not boxes:  # If the input list is empty
         return False  # Return False
 
-    unlocked = [False] * len(boxes)  # Initialize a list to track unlocked boxes
+    unlocked = [False] * len(boxes)
     unlocked[0] = True  # The first box is unlocked
     keys_to_try = boxes[0]  # Start with the keys in the first box
 
     while keys_to_try:  # Continue until there are no more keys to try
         key = keys_to_try.pop(0)  # Get the next key
-        if key < len(boxes) and not unlocked[key]:  # If the key corresponds to a box and it's not unlocked
+        if key < len(boxes) and not unlocked[key]:
             unlocked[key] = True  # Unlock the box
-            keys_to_try.extend(boxes[key])  # Add the keys from the newly unlocked box to the list of keys to try
+            keys_to_try.extend(boxes[key])
 
-    return all(unlocked)  # Return True if all boxes are unlocked, False otherwise
+    return all(unlocked)  # Return True, False otherwise
