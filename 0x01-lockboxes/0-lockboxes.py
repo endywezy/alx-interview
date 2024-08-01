@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+This module contains a function to determine if all boxes can be unlocked.
+"""
+
 
 def canUnlockAll(boxes):
     """
@@ -17,7 +21,7 @@ def canUnlockAll(boxes):
     unlocked[0] = True  # The first box is unlocked
     keys_to_try = boxes[0]  # Start with the keys in the first box
 
-    while keys_to_try:  # Continue until there are no more keys to try
+    while keys_to_try:
         key = keys_to_try.pop(0)  # Get the next key
         if key < len(boxes) and not unlocked[key]:
             unlocked[key] = True  # Unlock the box
