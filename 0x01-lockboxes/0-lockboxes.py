@@ -8,7 +8,6 @@ def canUnlockAll(boxes):
     """
     Determines if all boxes can be opened.
     """
-
     if not boxes:
         return False
 
@@ -22,4 +21,4 @@ def canUnlockAll(boxes):
             unlocked[key] = True
             keys_to_try.extend(boxes[key])
 
-            return all(unlocked)
+    return all(unlocked)
