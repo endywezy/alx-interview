@@ -10,8 +10,8 @@ def canUnlockAll(boxes):
     Returns:
     bool: True if all boxes can be opened, False otherwise.
     """
-    if not boxes:  # If the input list is empty
-        return False  # Return False
+    if not boxes:
+        return False
 
     unlocked = [False] * len(boxes)
     unlocked[0] = True  # The first box is unlocked
