@@ -1,29 +1,23 @@
 #!/usr/bin/python3
 
+
 def canUnlockAll(boxes):
-    if not boxes:
-        return False
+    # Initialize the sets
+    keys = set()
+    opened_boxes = set()
 
-    keys = set(boxes[0])
-    unlocked = {0}
+    keys.add(0)
+    opened_boxes.add(0)
 
-    while True:
-        added = False
-        for i, box in enumerate(boxes):
-            if i in unlocked and i not in keys:
-                keys.update(box)
-                unlocked.update(box)
-                added = True
-        if not added:
-            break
+    while keys:
+        current_key = keys.pop()
+        if current_key in opened_boxes:
+            continue
 
-    return len(unlocked) == len(boxes)
+        opened_boxes.add(current_key)
 
+        for key in boxes[current_key]:
+            if key not in opened_boxes:
+                keys.add(key)
 
-if __name__ == "__main__":
-    boxes = [[1], [2], [3], [4], []]
-    print(canUnlockAll(boxes))
-    boxes = [[1, 4, 6], [2], [0, 4, 1], [5, 6, 2], [3], [4, 1], [6]]
-    print(canUnlockAll(boxes))
-    boxes = [[1, 4], [2], [0, 4, 1], [3], [], [4, 1], [5, 6]]
-    print(canUnlockAll(boxes))
+    return len(opened_boxes) == len(boxes)
