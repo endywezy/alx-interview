@@ -1,6 +1,6 @@
 def island_perimeter(grid):
     """
-    Returns the perimeter 
+    Returns the perimeter
     """
     perimeter = 0
     rows = len(grid)
@@ -12,10 +12,13 @@ def island_perimeter(grid):
                 # Add 4 for each land cell
                 perimeter += 4
 
-                # Check for neighboring land cells and subtract for shared borders
+                # Check for neighboring land
+                # cells and subtract for shared borders
                 if r > 0 and grid[r - 1][c] == 1:
-                    perimeter -= 2  # Subtract 2 for the shared border with the cell above
+                    perimeter -= 2
+                    # Subtract 2 for the shared border with the cell above
                 if c > 0 and grid[r][c - 1] == 1:
-                    perimeter -= 2  # Subtract 2 for the shared border with the cell to the left
+                    perimeter -= 2
+                # Subtract 2 for the shared border with the cell to the left
 
     return perimeter
