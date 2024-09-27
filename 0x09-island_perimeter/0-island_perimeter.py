@@ -1,12 +1,6 @@
 def island_perimeter(grid):
     """
-    Returns the perimeter of the island described in grid.
-
-    Args:
-        grid (list of list of int): The grid representation of the island.
-
-    Returns:
-        int: The perimeter of the island.
+    Returns the perimeter 
     """
     perimeter = 0
     rows = len(grid)
